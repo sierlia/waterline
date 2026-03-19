@@ -8,7 +8,7 @@
   --accent: #91d3ff;
   --accent-strong: #d7ecff;
   --waterline: 48vh;
-  --water-bend: 0px;
+  --surface-tilt: 0px;
   --water-offset: 0px;
   --water-intensity: 1;
   --copy-shift-x: 0px;
@@ -214,14 +214,14 @@ a {
   overflow: hidden;
   height: max(42vh, calc(100vh - var(--waterline) + 40px));
   mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.92) 10%, rgba(0,0,0,1) 28%);
-  opacity: calc(0.7 + var(--hero-progress) * 0.2);
+  opacity: calc(0.7 + var(--hero-progress) * 0.24);
 }
 
 .hero__water-copy-inner {
-  transform: translate3d(var(--copy-shift-x), calc(-1 * var(--waterline) + 20px + var(--copy-shift-y)), 0) scaleY(calc(1 + var(--water-intensity) * 0.022));
+  transform: translate3d(var(--copy-shift-x), calc(-1 * var(--waterline) + 16px + var(--copy-shift-y)), 0) scale3d(1.01, calc(1 + var(--water-intensity) * 0.032), 1);
   transform-origin: top center;
   filter: url(#underwater-distortion) blur(var(--copy-blur));
-  opacity: 0.92;
+  opacity: 0.94;
 }
 
 .hero__title--ghost,
@@ -335,8 +335,8 @@ a {
   position: absolute;
   inset: 42% 0 0;
   background:
-    linear-gradient(180deg, rgba(149, 189, 219, 0.1), rgba(31, 60, 86, 0.55) 14%, rgba(8, 15, 24, 0.9) 100%),
-    radial-gradient(120% 22% at 50% 0%, rgba(238,247,255,0.55), transparent 38%),
+    linear-gradient(180deg, rgba(174, 210, 237, 0.16), rgba(38, 68, 96, 0.62) 14%, rgba(8, 15, 24, 0.92) 100%),
+    radial-gradient(120% 22% at 76% 0%, rgba(246,251,255,0.72), transparent 36%),
     repeating-linear-gradient(180deg, rgba(255,255,255,0.12) 0 2px, rgba(255,255,255,0) 2px 16px);
   filter: blur(0.5px);
 }
@@ -415,7 +415,7 @@ a {
 
 @media (max-width: 960px) {
   :root {
-    --waterline: 52vh;
+    --waterline: 54vh;
   }
 
   .hero {
@@ -437,7 +437,7 @@ a {
 
 @media (max-width: 720px) {
   :root {
-    --waterline: 55vh;
+    --waterline: 58vh;
   }
 
   .hero {

@@ -3,7 +3,6 @@ import { clamp, lerp } from './utils.js';
 
 const hero = document.querySelector('[data-hero]');
 const canvas = document.querySelector('[data-water-canvas]');
-const underwaterCopy = document.querySelector('[data-underwater-copy]');
 const fallback = document.querySelector('[data-fallback]');
 
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -37,11 +36,10 @@ const rafStateSync = () => {
 };
 
 const init = () => {
-  if (!hero || !canvas || !underwaterCopy) return;
+  if (!hero || !canvas) return;
   scene = new HeroScene({
     canvas,
     hero,
-    underwaterCopy,
     reducedMotion,
   });
 
