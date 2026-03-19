@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A cinematic ocean pollution hero interaction with a living waterline, drifting debris, and underwater distortion."
+    />
+    <title>Waterline — Ocean Pollution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <svg class="filters" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="underwater-distortion" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence
+            id="underwater-turbulence"
+            type="fractalNoise"
+            baseFrequency="0.007 0.03"
+            numOctaves="2"
+            seed="11"
+            result="noise"
+          />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="B" />
+        </filter>
+      </defs>
+    </svg>
+
+    <main class="page-shell">
+      <section class="hero" data-hero>
+        <div class="hero__backdrop"></div>
+        <canvas class="hero__canvas" data-water-canvas aria-hidden="true"></canvas>
+        <div class="hero__grain" aria-hidden="true"></div>
+
+        <div class="hero__inner">
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-mark"></span>
+            Ocean pollution observatory
+          </div>
+
+          <div class="hero__copy">
+            <p class="hero__kicker">Below the surface</p>
+            <h1 class="hero__title">
+              <span class="hero__title-line">The ocean does not</span>
+              <span class="hero__title-line hero__title-line--offset">hide what we throw away.</span>
+            </h1>
+            <p class="hero__body hero__body--lead">
+              Plastic, metal, and synthetic waste drift below the surface long after they leave our hands.
+            </p>
+          </div>
+
+          <div class="hero__water-copy" data-underwater-copy aria-hidden="true">
+            <div class="hero__water-copy-inner">
+              <p class="hero__kicker hero__kicker--ghost">Below the surface</p>
+              <h1 class="hero__title hero__title--ghost">
+                <span class="hero__title-line">The ocean does not</span>
+                <span class="hero__title-line hero__title-line--offset">hide what we throw away.</span>
+              </h1>
+              <p class="hero__body hero__body--ghost">
+                Plastic, metal, and synthetic waste drift below the surface long after they leave our hands.
+              </p>
+            </div>
+          </div>
+
+          <div class="hero__meta">
+            <div class="hero__stat">
+              <span class="hero__stat-value">11M+</span>
+              <span class="hero__stat-label">metric tons enter the ocean each year</span>
+            </div>
+            <div class="hero__actions">
+              <a href="#impact" class="button button--primary">See the impact</a>
+              <a href="#data" class="button button--secondary">Explore the data</a>
+            </div>
+          </div>
+
+          <div class="hero__scrollhint" aria-hidden="true">
+            <span class="hero__scrollhint-line"></span>
+            Scroll to strain the surface
+          </div>
+        </div>
+
+        <div class="hero__fallback" data-fallback>
+          <div class="hero__fallback-sheen"></div>
+        </div>
+      </section>
+
+      <section class="content" id="impact">
+        <div class="content__intro">
+          <p class="content__label">Impact</p>
+          <h2>What sinks from view still shapes coastlines, food chains, and futures.</h2>
+        </div>
+        <div class="content__grid">
+          <article class="panel">
+            <p class="panel__value">80%</p>
+            <p class="panel__title">Land-based leakage</p>
+            <p class="panel__body">Most marine plastic begins as mismanaged waste on land before currents disperse it offshore.</p>
+          </article>
+          <article class="panel" id="data">
+            <p class="panel__value">700+</p>
+            <p class="panel__title">Species affected</p>
+            <p class="panel__body">Entanglement, ingestion, and habitat contamination continue to rise as debris fragments into microplastics.</p>
+          </article>
+          <article class="panel">
+            <p class="panel__value">Decades</p>
+            <p class="panel__title">Persistent materials</p>
+            <p class="panel__body">Bottles, nets, cans, and films remain in circulation for years, reflecting light while releasing toxins.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
