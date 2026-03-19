@@ -1,0 +1,9 @@
+{
+  "name": "waterline",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "build": "rm -rf dist && mkdir -p dist/src dist/public && cp index.html styles.css dist/ && cp -r src/. dist/src/ && if [ -d public ]; then cp -r public/. dist/public/; fi"
+  }
+}
